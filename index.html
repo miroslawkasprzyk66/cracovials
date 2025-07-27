@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cracovials</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --main-color: #1a1a2e;
+      --accent-color: #c5a880;
+      --font-headline: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-body);
+      color: var(--main-color);
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .logo {
+      font-family: var(--font-headline);
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: var(--main-color);
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    }
+    .hero h1 {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 2rem;
+      font-family: var(--font-body);
+    }
+    .btn-primary {
+      background: var(--main-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-family: var(--font-body);
+    }
+    .btn-primary:hover {
+      background: #000022;
+    }
+    .form-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .form-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .form-content h2 {
+      margin-bottom: 1rem;
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+    }
+    .form-content label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .form-content input,
+    .form-content textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-family: var(--font-body);
+    }
+    .form-content textarea {
+      resize: vertical;
+    }
+    .form-content button {
+      margin-top: 1rem;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .section h2 {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .section p {
+      font-size: 1rem;
+      color: #333;
+      font-family: var(--font-body);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Cracovials</div>
+  </header>
+
+  <section class="hero">
+    <h1>Virtuelles Büro, Assistenz & Marktservice – speziell für Kunden aus Deutschland, Österreich und der Schweiz.</h1>
+    <p>Professionelle Unterstützung für Ihr Wachstum auf dem polnischen Markt.</p>
+    <button
+      class="btn-primary"
+      onclick="document.getElementById('formModal').style.display='flex'"
+    >
+      Kontaktieren Sie uns
+    </button>
+  </section>
+
+  <section class="section">
+    <h2>Virtuelles Büro, Assistenz & Marktservice</h2>
+    <p>
+      Wir bieten umfassende Unterstützung im digitalen Büroservice, in der Verwaltung sowie im sprachlichen Bereich.<br />
+      Dazu gehören Terminkoordination, E-Mail-Korrespondenz, Rechnungserstellung, Datenpflege, Korrekturlesen, Übersetzungen und das Verfassen von Angeboten oder Präsentationen.<br />
+      Unsere Leistungen richten sich gezielt an Unternehmen aus Deutschland, Österreich und der Schweiz, die in Polen aktiv werden möchten.
+    </p>
+  </section>
+
+  <div
+    id="formModal"
+    class="form-modal"
+    onclick="this.style.display='none'"
+  >
+    <div class="form-content" onclick="event.stopPropagation()">
+      <h2>Nachricht senden</h2>
+      <form
+        action="https://formspree.io/f/xrblqnkg"
+        method="POST"
+        novalidate
+      >
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button class="btn-primary" type="submit">Absenden</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
